@@ -28,3 +28,17 @@ cd nome-do-repositorio
 ```
 code .
 ```
+## Durante a aula
+
+1) Adicionando arquivos para o commit
+...
+git add.
+
+2) realizando o commit.
+...
+git commit -m "feat: oque foi feito."
+...
+3) atualizar p github
+git pull
+...
+
