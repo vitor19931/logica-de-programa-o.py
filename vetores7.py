@@ -1,11 +1,7 @@
 import os
 os.system("cls || clear")
 
-import os
-os.system("cls || clear")
-
 lista_de_pratos = []
-QUANTIDADE_DE_PRATOS = 8
 
 print("========Cardapio=======")
 print("1 - Picanha.........25.00")
@@ -19,43 +15,44 @@ print("6 - Pudim.........12.00")
 print("7 - Casquinha.......6.00")
 print("8 - Bolo de pote 10.00")
 
-menu = int(input("Digite o código do prato desejado: "))
+Resposta = "s"
 
-for i in range(QUANTIDADE_DE_PRATOS):
-    prato = int(input(f"Digite o {i + 1}º código do prato desejado: "))
-    
+while Resposta == "s":
+    prato = int(input("Digite o código do prato desejado: "))
+
+    if prato >=1 and prato <=8:
+        lista_de_pratos.append(prato)
+        Resposta = input("Deseja adicionar mais algum prato? (s/n) ").lower()
+    else:
+        print("Código inválido. Tente novamente.")
 
 soma = 0
+print("\n=======Pratos pedidos=======")
 for prato in lista_de_pratos:
-    match prato:
-        case 1:
-            soma += 25.00
-        case 2:
-            soma += 20.00
-        case 3:
-            soma += 18.00
-        case 4:
-            soma += 15.00
-        case 5:
-            soma += 5.00
-        case 6:
-            soma += 12.00
-        case 7:
-            soma += 6.00
-        case 8:
-            soma += 10.00
-        case _:
-            print("Prato inválido")
-    while True:
-        resposta = input("Deseja pedir mais algum prato? (s/n): ").lower()
-        if resposta in ['s', 'n']:
-            break
-        print("Resposta inválida. Digite 's' para sim ou 'n' para não.")
-    if resposta == 'n':
-        break
+    if prato == 1:
+        print("Picanha - R$25.00")
+        soma += 25.00
+    elif prato == 2:
+        print("Lasanha - R$20.00")
+        soma += 20.00
+    elif prato == 3:
+        print("Strogonoff - R$18.00")
+        soma += 18.00
+    elif prato == 4:
+        print("Bife acebolado - R$15.00")
+        soma += 15.00
+    elif prato == 5:
+        print("Pão com ovo - R$5.00")
+        soma += 5.00
+    elif prato == 6:
+        print("Pudim - R$12.00")
+        soma += 12.00
+    elif prato == 7:
+        print("Casquinha - R$6.00")
+        soma += 6.00
+    elif prato == 8:
+        print("Bolo de pote - R$10.00")
+        soma += 10.00        
 
-print(f"Total a pagar: R$ {soma:.2f}")
-lista_de_pratos.append(prato)
-print("Mostrando os pratos pedidos: ")
-for prato in lista_de_pratos:
-    print(f"Prato: {prato}")
+print(f"\nTotal a pagar: R${soma:.2f}")
+print("Obrigado pela preferência! Volte sempre!")
