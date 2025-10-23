@@ -16,24 +16,24 @@ class dados_da_pessoa:
 
 
     def mostrar_somente_nome(self):
-        print("\n= mostrar_somente_nome =")
+        print("\n= somente nomes =")
         print(f"Nome: {self.nome}")
 
 
 print("\n Solicitando dados da pessoa.")
-pessoa1 = dados_da_pessoa(nome=input("Digite seu nome: "),
-                          endereco=input("Digite seu endereço: "),
-                          email=input("Digite seu email: "))
+lista_pessoas = []
 
-print("\n Solicitando dados da pessoa.")
-pessoa2 = dados_da_pessoa(nome=input("Digite seu nome: "),
+for i in range(2):
+    pessoa = dados_da_pessoa(nome=input("Digite seu nome: "),
                           endereco=input("Digite seu endereço: "),
                           email=input("Digite seu email: "))
+    lista_pessoas.append(pessoa)
 
 print("\nExibindo dados")
-pessoa1.mostrar_dados()
-pessoa1.mostrar_somente_nome()
-pessoa2.mostrar_dados()
-pessoa2.mostrar_somente_nome()
+for pessoa in lista_pessoas:
+    pessoa.mostrar_dados()
+print("\n= Somente nomes =")
+for pessoa in lista_pessoas:
+    pessoa.mostrar_somente_nome()
 
               
